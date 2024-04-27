@@ -1,19 +1,16 @@
 #include <iostream> // include the input/output stream library
 using namespace std; // use the standard namespace
 
-void EnterTemp(double &temp) {
+int main() { // main function
+    double temp; // temperature is a needs to be a decimal number
+    char unit; // takes the user input for the unit's temperature
+    
     cout << "Temperature Converter" << endl; // display the title of the program
     cout << "Enter the temperature: "; // ask the user to enter the temperature
     cin >> temp; // store the temperature in the variable temp
-}
-
-void EnterUnit(char &unit) {
     cout << "Enter the unit (F for Fahrenheit, C for Celsius, and K for Kelvin): "; // ask the user to enter the unit
     cin >> unit; // store the unit in the variable unit
-}
 
-// Define a function to convert temperature
-void convert_temp(double temp, char unit) { // function to convert the temperature
     if (unit == 'F') { // if the unit is Fahrenheit
         cout << "Celsius: " << (temp - 32) * 5 / 9 << endl; // convert Fahrenheit to Celsius
         cout << "Kelvin: " << (temp - 32) * 5 / 9 + 273.15 << endl; // convert Fahrenheit to Kelvin
@@ -26,15 +23,6 @@ void convert_temp(double temp, char unit) { // function to convert the temperatu
     } else { // if the unit is not Fahrenheit, Celsius, or Kelvin
         cout << "Invalid unit" << endl; // display an error message
     }
-}
-
-int main() { // main function
-    double temp; // temperature is a needs to be a decimal number
-    char unit; // takes the user input for the unit's temperature
-    
-    EnterTemp(temp); // call the EnterTemp function
-    EnterUnit(unit); // call the EnterUnit function
-    convert_temp(temp, unit); // call the convert_temp function
 
     return 0;
 }
